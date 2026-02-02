@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress bar</title>
+    <style>
+        body{
+            font-family: cursive;
+            background-color: rgba(240, 238, 238, 0.573);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .cover{
+            background-color: white;
+            width: 50%;
+            padding: 2rem 5rem;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.226);
+        }
+        h3{
+            font-size: 2rem;
+            color: rgb(245, 109, 109);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        #solid-bar-parent, #stripped-bar-parent, #gradient-bar-parent{
+            width: 100%;
+            height: 20px;
+            background-color: grey;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        #solid-bar-child{
+            width: 50%;
+            height: 100%;
+            background-color: rgb(108, 144, 243);
+            border-radius: 12px;
+        }
+        #stripped-bar-child{
+            width: 30%;
+            height: 100%;
+            /*background-color: rgb(245, 200, 116);*/
+            background: repeating-linear-gradient(
+                135deg, rgb(104, 250, 104), rgb(104, 250, 104) 20px,  rgb(2, 136, 20) 20px, rgb(2, 136, 20) 40px
+            );
+            border-radius: 12px;
+        }
+        #gradient-bar-child{
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(200deg, rgb(241, 88, 88), rgb(129, 4, 4));
+            border-radius: 12px;
+        }
+        .score{
+            text-align: end;
+        }
+        #solid-score{
+            color: rgb(67, 99, 243);
+            font-weight: bold;
+        }
+        #stripped-score{
+            color: rgb(14, 172, 14);
+            font-weight: bold;
+        }
+        #gradient-score{
+            color: rgb(216, 49, 57);
+            font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <h3>progress bar</h3>
+        <div id="solid-bar-parent">
+            <div id="solid-bar-child"></div>
+            <div id="solid-score" class="score">50%</div>
+        </div>
+        <div id="stripped-bar-parent">
+            <div id="stripped-bar-child"></div>
+            <div id="stripped-score" class="score">30%</div>
+        </div>
+        <div id="gradient-bar-parent">
+            <div id="gradient-bar-child"></div>
+            <div id="gradient-score" class="score">70%</div>
+        </div>
+    </div>
+    <script>
+        let solidBar = document.getElementById('solid-bar-child');
+        let solidScore = document.getElementById('solid-score');
+
+        let strippedBar = document.getElementById('stripped-bar-child');
+        let strippedScore = document.getElementById('stripped-score');
+
+        let gradientBar = document.getElementById('gradient-bar-child');
+        let gradientScore = document.getElementById('gradient-score');
+
+        function animateProgressWithScore(barElement, scoreElement, targetWidth, duration){
+            let currentWidth = 0;
+            let interval = 10;
+            let step = (targetWidth/duration)*interval;
+            let intervalId= setInterval(
+                function(){
+                    currentWidth+=step;
+                    if(currentWidth<=targetWidth){
+                        barElement.style.width = `${currentWidth}%`;
+                        scoreElement.innerHTML = `${Math.round(currentWidth)}%`;
+                    }
+                    else{
+                        clearInterval(intervalId);
+                    }
+                }
+            ,interval);
+
+        }
+        animateProgressWithScore(solidBar, solidScore, 50, 2000);
+        animateProgressWithScore(strippedBar, strippedScore, 30, 2000);
+        animateProgressWithScore(gradientBar, gradientScore, 70, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#cover{
+    display: flex;
+    background-color: rgb(239, 240, 241);
+}
+
+#content{
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#content p{
+    color: rgba(15, 7, 133, 0.993);
+}
+
+.sidebar{
+    min-height: 100vh;
+    background-color: black;
+    width: 220px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    transition: width .5s;
+}
+
+#logo{
+border-radius: 50%;
+display: flex;
+align-items: center;
+gap: 5px;
+margin-top: 12px;
+}
+
+#logo img{
+    width: 100px;
+    height: 130px;
+    border-radius: 30%;
+}
+
+#logo #title{
+    color: white;
+    font-size: 15px;
+    padding-right: 10px;
+    font-weight: 700;
+
+}
+#toggle_btn{
+    text-align: end;
+}
+
+#toggle_btn .ionicon{
+    width: 40px;
+    height: 40px;
+    stroke: rgb(142, 243, 243);
+    cursor: pointer;
+    font-size: 18px;
+    padding-top: 12px;
+}
+
+.sidebar ul{
+    list-style: none;
+}
+
+.sidebar ul li{
+    margin: 10px 20px;
+
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+}
+
+.sidebar ul li a:hover{
+    background-color: rgb(240, 93, 142);
+    border-radius: 50px;
+}
+
+.ionicon{
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: #000;
+    stroke: #000;
+}
+
+a .ionicon{
+    color: inherit;
+    fill: #000; 
+    stroke: white; 
+}
+
+.sidebar.collapsed{
+    width: 70px;
+}
+
+.sidebar.collapsed .label{
+    display: none;
+}
+
+.sidebar.collapsed #toggle_btn{
+    margin-top: 142px;
+}
+
+.sidebar.collapsed ul li a{
+    padding: 10px 0;
+    font-size: 20px;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+
+.sidebar.collapsed #logo{
+    display: none;
+}

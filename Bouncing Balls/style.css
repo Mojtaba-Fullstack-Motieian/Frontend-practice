@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cover span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(68, 143, 255);
+    display: inline-block;
+    outline: 2px double rgb(156, 155, 255);
+    outline-offset: 2px;
+    margin-right: 20px;
+    animation: bouncing 1s linear infinite;
+}
+#cover span:last-child { margin-right: 0; }
+
+#cover span:nth-child(1) { animation-delay: 0s; }
+#cover span:nth-child(2) { animation-delay: 0.2s; }
+#cover span:nth-child(3) { animation-delay: 0.4s; }
+#cover span:nth-child(4) { animation-delay: 0.6s; }
+#cover span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes bouncing{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-150px);}
+    100%{transform: translateY(0);}
+}
