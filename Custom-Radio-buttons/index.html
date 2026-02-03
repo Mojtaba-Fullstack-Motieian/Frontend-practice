@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Radio Buttons</title>
+
+    <style>
+        
+        .cover{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 4px;
+        }
+        #custom_radio{
+            display: none;
+        }
+        #custom_radio+label{
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            border: 1px solid orangered;
+            display: block;
+        }
+        #custom_radio:checked+label{
+            background-color: orange;
+            outline: 1px solid red;
+            outline-offset: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>Default Radio Button</h3>
+    <div>
+        <input type="radio" name="radio_btn" >
+        <label>
+            Radio Button
+        </label>
+    </div>
+    <hr>
+    <h3>Custom Radio Button</h3>
+    <div class="cover">
+        <input type="radio" name="radio_btn" id="custom_radio">
+        <label for="custom_radio"></label>
+        <span>Radio Button</span>
+
+    </div>
+
+</body>
+</html>
