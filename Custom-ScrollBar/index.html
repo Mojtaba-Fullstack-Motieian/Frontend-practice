@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+    <title>Practice Scrollbar Customization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .color-block {
+            height: 200px;
+            margin: 20px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .spacer {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        /* Add your scrollbar customization CSS here */
+        /* Example selectors to use:
+           ::-webkit-scrollbar
+           ::-webkit-scrollbar-track  
+           ::-webkit-scrollbar-thumb
+           ::-webkit-scrollbar-thumb:hover
+
+           * for all browsers except firefox
+        */
+        ::-webkit-scrollbar{
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track{
+            background-color: rgb(82, 132, 240);
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background-color: rgb(15, 15, 163);
+            border-radius: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover{
+            background-color: rgb(2, 2, 90);
+        }
+
+        /*for fire fox*/
+        @supports(scrollbar-width: auto){
+            *{
+                scrollbar-width: auto;
+                scrollbar-color: rgb(1, 1, 117) rgb(98, 98, 245);
+            }
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scrollbar Practice Page</h1>
+            <p>This page has enough content to force scrolling. Add your custom scrollbar CSS in the style section.</p>
+        </header>
+        
+        <div class="content-section">
+            <h2>Section 1</h2>
+            <p>This is some sample content. Scroll down to see more sections.</p>
+            <div class="color-block" style="background-color: #4a6fa5;">
+                Color Block #1
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Section 2</h2>
+            <p>More content to make the page longer.</p>
+            <div class="color-block" style="background-color: #6b5b95;">
+                Color Block #2
+            </div>
+        </div>
+        
+        <div class="spacer">
+            This empty space ensures scrolling is needed ↓
+        </div>
+        
+        <div class="content-section">
+            <h2>Section 3</h2>
+            <p>You've scrolled quite far! Keep going.</p>
+            <div class="color-block" style="background-color: #88b04b;">
+                Color Block #3
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Section 4</h2>
+            <p>Almost at the bottom of the page.</p>
+            <div class="color-block" style="background-color: #ff6b6b;">
+                Color Block #4
+            </div>
+        </div>
+        
+        <div class="spacer">
+            More empty space for scrolling practice
+        </div>
+        
+        <div class="content-section">
+            <h2>Section 5</h2>
+            <p>Final section. The page should definitely be scrollable now!</p>
+            <div class="color-block" style="background-color: #5c6bc0;">
+                Color Block #5
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Bottom of Page</h2>
+            <p>If you can see this, you've scrolled to the end! Now go practice customizing that scrollbar.</p>
+            <div style="text-align: center; padding: 20px; color: #666;">
+                🎉 Perfect for scrollbar CSS practice! 🎉
+            </div>
+        </div>
+    </div>
+</body>
+</html>

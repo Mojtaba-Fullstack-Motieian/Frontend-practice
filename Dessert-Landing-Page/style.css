@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.dessert_header{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.left_header{
+    background-color: rgb(241, 179, 103);
+    position: relative;
+    overflow: hidden;
+    padding-left: 6rem;
+    transform: translateX(-50%);
+    animation: slideshow_ltr 1s linear forwards;
+}
+.left_header img{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(50%);
+    opacity: 0;
+    animation: show_plates 1s 1s linear forwards;
+}
+.right_header{
+    background-color: rgb(226, 204, 176);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+    padding-right: 6rem;
+    text-align: end;
+    transform: translateX(50%);
+    animation: slideshow_rtl 1s linear forwards;
+}
+.right_header img{
+    width: 50%;
+    position: absolute;
+    right: 50%;
+    transform: scale(1.015) translate(-50%, -1%);
+    opacity: 0;
+    animation: show_plates 1s 1s linear forwards;
+}
+.title{
+    color: rgb(124, 69, 2);
+    font-size: 22px;
+    text-shadow: 1px 3px #aa997f;
+    opacity: 0;
+    animation: show_title 1s 1.2s linear forwards;
+
+}
+.description{
+    padding: 10px 0;
+    opacity: 0;
+    animation: show_desp 1s 2s linear forwards;
+}
+.description p{
+    padding: 4px;
+}
+.dessert_header button{
+   background-color: rgb(95, 53, 2);
+   color: white;
+   padding: 10px 30px;
+   border-radius: 50px;
+   border: none;
+   box-shadow: 2px 7px 18px #aa997f; 
+   margin: 20px 30px;
+   cursor: pointer;
+   transition: 0.3s transform;
+   opacity: 0;
+   animation: show_button 1s 2.5s linear forwards;
+}
+.dessert_header button:hover{
+    transform: scale(1.1);
+}
+.left_images img, .right_images img{
+    width: 15%;
+    position: absolute;
+}
+.left_images{
+    opacity: 0;
+    animation: show_mini_images 1s 2.5s linear forwards;
+}
+.right_images{
+    opacity: 0;
+    animation: show_mini_images 1s 2.5s linear forwards;
+}
+#cherry{
+    left: 10%;
+    top: 15%;
+}
+#orange{
+    left: 50%;
+    top: 55%;
+}
+#berry{
+    left: 20%;
+    bottom: 10%;
+}
+#chocolate{
+    width: 15%;
+    top: 65%;
+    left: 30%;
+}
+#cookies{
+    width: 15%;
+    top: 15%;
+    left: 70%;
+}
+#nut_chocolate{
+    width: 15%;
+    top: 85%;
+    left: 70%;
+}
+#cover nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    padding: 20px 6rem;
+    opacity: 0;
+    animation: show_nav 0.5s 1s linear forwards
+}
+#cover nav h3{
+    font-size: 24px;
+    color: rgb(139, 78, 3);
+}
+#cover nav ul a{
+    margin: 0 10px;
+    text-decoration: none;
+    color: #744704;
+    font-weight: 500;
+    transition: border-bottom 0.5s;
+}
+#cover nav ul a:hover{
+    border-bottom: 2px solid #744704;
+}
+#search input{
+    border: none;
+    background-color: #aa997f;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #744704;
+}
+@keyframes slideshow_ltr{
+    from{
+        transform: translateX(-50%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideshow_rtl{
+    from{
+        transform: translateX(50%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes show_plates{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes show_nav{
+    from{
+        opacity: 0;
+        top: -20px;
+    }
+    to{
+        opacity: 1;
+        top: 0px;
+    }
+}
+@keyframes show_title{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes show_desp{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes show_button{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes show_mini_images{
+    from{
+
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .title{
+        font-size: 12px;
+    }
+    .left_header{
+        font-size: 14px;
+        padding: 1rem 1rem;
+        width: 100%;
+    }
+    .right_header{
+        font-size: 14px;
+        padding: 1rem 1rem;
+        width: 100%;
+    }
+    #header{
+        flex-direction: column;
+    }
+}
